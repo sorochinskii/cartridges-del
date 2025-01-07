@@ -18,12 +18,12 @@ class Settings(BaseSettings):
     HTTP_SECURE: str = Field(default='HTTP_SECURE')
     HTTP_PORT: int = Field(default=80)
 
-    # DB_HOST: str = Field(default='DB_HOST')
-    # DB_PASS: str = Field(default='DB_PASS')
-    # DB_PORT: str = Field(default='DB_PORT')
-    # DB_USER: str = Field(default='DB_USER')
-    # DB_NAME: str = Field(default='DB_NAME')
-    # DB_URL: str = Field(default='DB_URL')
+    DB_HOST: str = Field(default='DB_HOST')
+    DB_PASS: str = Field(default='DB_PASS')
+    DB_PORT: str = Field(default='DB_PORT')
+    DB_USER: str = Field(default='DB_USER')
+    DB_NAME: str = Field(default='DB_NAME')
+    DB_URL: str = Field(default='DB_URL')
 
     class Config:
         validate_assignment = True
