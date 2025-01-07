@@ -46,7 +46,6 @@ jobs:
     -
       name: Install dependencies
       run: poetry install --no-interaction
-    - 
       # name: Setup Debug Session
       # uses: csexton/debugger-action@master
     -
