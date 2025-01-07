@@ -8,6 +8,7 @@ class Settings(BaseSettings):
         super().__init__(_env_file=env_file, _case_sensitive=True, )
 
     HOST: str = Field(default='HOST')
+    SSH_USER: str = Field(default='SSH_USER')
     SSH_PRIVATE_KEY: str = Field(default='SSH_KEY')
     SSH_PASSPHRASE: str = Field(default='SSH_PASSPHRASE')
     SSH_PORT: str = Field(default='SSH_PORT')
@@ -17,11 +18,11 @@ class Settings(BaseSettings):
     HTTP_SECURE: str = Field(default='HTTP_SECURE')
     HTTP_PORT: int = Field(default=80)
 
-    DB_HOST: str = Field(default='DB_HOST')
-    DB_PASS: str = Field(default='DB_PASS')
-    DB_PORT: str = Field(default='DB_PORT')
-    DB_USER: str = Field(default='DB_USER')
-    DB_NAME: str = Field(default='DB_NAME')
+    # DB_HOST: str = Field(default='DB_HOST')
+    # DB_PASS: str = Field(default='DB_PASS')
+    # DB_PORT: str = Field(default='DB_PORT')
+    # DB_USER: str = Field(default='DB_USER')
+    # DB_NAME: str = Field(default='DB_NAME')
     # DB_URL: str = Field(default='DB_URL')
 
     class Config:
