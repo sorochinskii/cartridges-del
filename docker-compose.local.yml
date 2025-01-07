@@ -1,0 +1,21 @@
+services:
+
+  # db:
+  #   extends:
+  #     file: docker-compose.common.yml
+  #     service: db
+  #   user: 1000:1000
+  #   env_file:
+  #       - ./.env
+
+  web:
+    extends:
+      file: docker-compose.common.yml
+      service: web
+    build:
+      context: .
+      dockerfile: ./dockerfiles/cartridges/Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - ./.env:/code/.env
