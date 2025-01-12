@@ -1,6 +1,7 @@
-from config import settings
 from fastapi import FastAPI
-from utils import URLBuilder
+
+from source.config import settings
+from source.utils import URLBuilder
 
 url_builder = URLBuilder(
     host=settings.HOST,
