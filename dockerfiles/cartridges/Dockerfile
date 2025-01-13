@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.11-bookworm
 
 ENV CODE_DIR=code
 ENV SOURCE_DIR=source

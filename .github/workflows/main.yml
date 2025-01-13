@@ -95,7 +95,7 @@ jobs:
         name: Set up Python
         uses: actions/setup-python@v2
         with:
-            python-version: 3.12
+            python-version: 3.11
       # - 
       #   name: Set ENVIRONMENT to prod env
       #   run: |
@@ -125,7 +125,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           source: "
-            dockerfiles,
             docker-compose.yml,
             docker-compose.common.yml,
             docker-compose.prod.yml,
@@ -141,8 +140,9 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            # export ENVIRONMENT=${{ env.ENVIRONMENT }}
             cd ~/code
             docker compose down
-            docker rmi sorochinskii/${{ secrets.PROJECT_NAME }} -f
-            docker compose up -d
+            # docker rmi sorochinskii/cartridges:latest -f || true
+            # docker builder prune -a -f || true
+            # docker compose build --no-cache
+            docker compose up  --force-recreate -d

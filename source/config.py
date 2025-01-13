@@ -1,8 +1,4 @@
-from dataclasses import asdict, dataclass
-from os import getenv
-
-from dotenv import find_dotenv
-from pydantic import Field, model_validator
+from pydantic import Field
 from pydantic_settings import BaseSettings
 
 
